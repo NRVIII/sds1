@@ -1,5 +1,6 @@
 package com.devsuperior.dspesquisa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -24,6 +25,7 @@ public class Record implements Serializable {
     private Integer age;
     private Instant moment;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "game_id")
     private Game game;

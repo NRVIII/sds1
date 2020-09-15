@@ -1,6 +1,7 @@
 package com.devsuperior.dspesquisa.entities;
 
 import com.devsuperior.dspesquisa.entities.enums.Platform;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +26,12 @@ public class Game implements Serializable {
     private String title;
     private Platform platform;
 
+    @JsonIgnore // TODO: rever alternativa provisória
     @ManyToOne
     @JoinColumn(name = "genre_id")
     private Genre  genre;
 
+    @JsonIgnore // TODO: rever alternativa provisória
     @OneToMany(mappedBy = "game")
     private List<Record> records = new ArrayList<>();
 
