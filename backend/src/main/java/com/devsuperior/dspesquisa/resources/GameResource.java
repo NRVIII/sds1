@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/games")
-public class GameResources {
+public class GameResource {
 
     private final GameService service;
 
-    public GameResources(GameService service) {
+    public GameResource(GameService service) {
         this.service = service;
     }
 
