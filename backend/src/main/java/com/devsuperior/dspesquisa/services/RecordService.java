@@ -7,6 +7,8 @@ import com.devsuperior.dspesquisa.entities.Record;
 import com.devsuperior.dspesquisa.repositories.GameRepository;
 import com.devsuperior.dspesquisa.repositories.RecordRepository;
 import java.time.Instant;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,4 +40,14 @@ public class RecordService {
     }
 
 
+    public Page<RecordDTO> findByMoments(
+        Instant min,
+        Instant max,
+        PageRequest pageRequest) {
+
+        return repository.findByMoments(
+            min,
+            max,
+            pageRequest).map(RecordDTO::new);
+    }
 }
