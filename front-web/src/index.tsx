@@ -6,5 +6,5 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root') // acessa o elemento do index com o id chamado root!!
+  document.getElementById('root'), // acessa o elemento do index com o id chamado root!!
 );
