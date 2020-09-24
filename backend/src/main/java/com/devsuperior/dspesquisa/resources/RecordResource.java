@@ -46,8 +46,7 @@ public class RecordResource {
         PageRequest pageRequest = PageRequest
             .of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 
-        return ResponseEntity
-            .ok()
+        return ResponseEntity.ok()  
             .body(service.findByMoments(minDate, maxDate, pageRequest));
     }
 

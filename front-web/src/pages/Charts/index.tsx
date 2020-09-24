@@ -4,7 +4,7 @@ import axios from 'axios';
 import Filters from '../../components/Filters/index';
 import './styles.css';
 import { pieOptions, barOptions } from './chart-options';
-import {buildBarSeries, getGenderChartData, getPlatformChartData} from './helpers';
+import { buildBarSeries, getGenderChartData, getPlatformChartData } from './helpers';
 
 type PieChartData = {
   labels: string[];
@@ -24,6 +24,7 @@ const initialPieData = {
 const BASE_URL = 'http://localhost:8880';
 
 const Charts = () => {
+  // @ts-ignore
   const [barChartData, setBarChartData] = useState<BarChartData>([]);
   const [platformData, setPlataformData] = useState<PieChartData>(initialPieData);
   const [genderData, setGenderData] = useState<PieChartData>(initialPieData);
